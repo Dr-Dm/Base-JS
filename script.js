@@ -4,8 +4,9 @@
 
 
 
-var name = ('Василий');
-var admin = name;
+var n = 'Василий';
+var admin = n;
 
-var a = (1000 + "108");
-console.log(a);
+alert(n);
+var b = 1000 + "108"; 
+document.write(b);
