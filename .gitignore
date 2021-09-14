@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 #игнорирую созаваемые ВСкодом папки
-.dist/
+dist/
