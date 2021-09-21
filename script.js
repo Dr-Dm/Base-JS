@@ -1,171 +1,115 @@
-/* 
-ДЗ 1
+//1
 
-var tempC = prompt('Введите температуру в градцсах цельсия');
-var tempF = (9 / 5) * tempC + 32;
-alert("Темература " + tempC + " градусов по Цельсию равна " + tempF + " градусам по Фаренгейту");
+var x = 0;
+var n = 2; 
 
-
-
-var name = 'Василий';
-var admin = name;
-alert(admin);
-
-1000 + "108" = 1000108 */
-
-
-
-//ДЗ 2
-
-
-/* var a = 1, b = 1, c, d;
-c = ++a; alert(c);           // 2 (Префиксный инкримент, а увеличивается на 1. a = 2)
-d = b++; alert(d);           // 1 (Постфиксный инкримент, сначал вывод, потом прибавление. на вывод = 1, после чего b = 2)
-c = (2+ ++a); alert(c);      // 5 (ПреИнк перед а, на начало строки а=2 а в выражении а=3 поулчается 2 + 3 = 5)
-d = (2+ b++); alert(d);      // 4 (ПостИнк b пока что 2, d получается 2 + 2 = 4 и b становится = 3)
-alert(a);                    // 3 (последнее заначение а = 3)
-alert(b);                    // 3 (Аналогично b) */
-
-/* var a = 2;
-var x = 1 + (a *= 2);
-
-x = 5. выражение аналогично x = 1 + (a * 2),  при а = 2 */
-
-
-// 3.
-/* var a = parseInt(prompt("Введите любое ( в т.ч. отрицательное) целое число"))
-var b = parseInt(prompt("Введите любое ( в т.ч. отрицательное) целое число"))
-
-if (a >= 0 && b >= 0) {
-    var c = a - b; 
-} else if (a < 0 && b < 0) {
-    var c = a * b;
-} else {
-    var c = a + b;
-}
-
-alert(c);
- */
-
-// 4. 
-/* var a = parseInt(Math.random() * (15 - 0 + 1) + 0);
-switch (a) {
-    case 0:
-        console.log(a);
-        a++;
-    case 1:
-        console.log(a);
-        a++;
-    case 2:
-        console.log(a);
-        a++;
-    case 3:
-        console.log(a);
-        a++;
-    case 4:
-        console.log(a);
-        a++;
-    case 5:
-        console.log(a);
-        a++;
-    case 6:
-        console.log(a);
-        a++;
-    case 7:
-        console.log(a);
-        a++;
-    case 8:
-        console.log(a);
-        a++;
-    case 9:
-        console.log(a);
-        a++;
-    case 10:
-        console.log(a);
-        a++;  
-    case 11:
-        console.log(a);
-        a++; 
-    case 12:
-        console.log(a);
-        a++;
-    case 13:
-        console.log(a);
-        a++;
-    case 14:
-        console.log(a);
-         a++;  
-    case 15:
-        console.log(a);     
-    default:
-        break;
-}
- */
-
-// 5
-
-function addition(a,b) {
-    var s = a + b;
-    return s;    
-}
-
-function substraction(a,b) {
-    var s = a - b;
-    return s;  
-}
-
-function multiplication(a,b) {
-    var s = a * b;
-    return s;
-}
-
-function division(a,b) {
-    var s = a / b;
-    return s;
-}
-
-
-// 6
-
-function mathOperation(arg1, arg2, operation) {
-    switch(operation) {
-        case addition:
-            addition(arg1,arg2);
-            break;
-        case substraction:
-            substraction(arg1,arg2);
-            break;
-        case  multiplication:
-            multiplication(arg1,arg2);
-            break;
-        case division:
-            division(arg1,arg2);
-            break;
-        default:
-            break;
-        
+/* function factorial(x) {
+    if (x==0) {
+        return 0;
+    } else if (x==1) {
+        return 1;
+    } else {
+        return x * factorial(x-1);
     }
-}
-
-
-/*
-при сарвнении null и 0 :
-null >= 0 и null <= 0;  true
-все остальные сравнения false
-
-оператор == сравнивает два разних типа данных, в соотвестви с абстрактным алгортмом сравнения, выдавая по умлочанию false
-операторы сравнения > и < в соответствии с абстрактным алгоритмом сравнения для равенств преобразует null в +0, что при null > 0  и null < 0 будет давать false.
-соответсвенно в случаях (null >= 0 && null <= 0) результат - true
-
-*/
-
-// 8 
-
-/* function power(val, pow) {
     
-    if (pow == 1) {
-        return val;
+}
+
+
+while (++x <= 100) {
+    if (x == 0 || x == 1) {
+        continue;
+    } else if((factorial(x-1) + 1) % x == 0) {
+       console.log(x);
+    } else {
+        continue;
     }
-    return val * power(val, pow-1);
+}
+*/
+//Самый простой способ, но работает до 19 =(
+ 
+
+
+/* while (x <= 100) {
+    if(x == 2) {
+        console.log(x);
+    } else {
+        while (n <= Math.ceil(Math.sqrt(x)) ) {
+            if ((x % n) == 0) {
+                break;
+            } else {
+                n++;
+                if(n > Math.ceil(Math.sqrt(x))) {
+                  console.log(x);}
+            }               
+        }
+    }
+    
+    x++;
+    n = 2;
+} */
+
+ //Через while, но некрасиво. 
+
+// Вариант через do..while без вложенных проверок.
+
+/* while (x <= 100) {
+    if (x == 0 || x == 1) {
+        x++;
+        continue;
+    } else {
+        
+        do {
+            if ((x % n) == 0) {
+                break;
+            } else {
+                n++;
+            }  
+        } while (n <= Math.ceil(Math.sqrt(x)));
+        if (n > Math.ceil(Math.sqrt(x))) {
+            console.log(x)
+        }
+    }
+
+    n = 2;
+    x++;
 }
  */
+
+//2-3
+
+/* var goods = [
+    {
+        title: 'Товар 1',
+        price: 100,
+        count: 5
+    },
+    {
+        title: 'Товар 2',
+        price: 200,
+        count: 2
+    }
+];
+
+function countBasketPrice(goods) {
+    var s = 0;
+    for(var x of goods){
+        s += x.price * x.count;
+    }
+    return s; 
+}
+console.log(countBasketPrice(goods)); */
+
+
+
+
+//4
+/* 
+for (var i = 0; i < 10; console.log(i++)) {
+    
+} */
+
+//5
+
+/* for (var i = 1; i <=20; i++) {
+      console.log(Array(i).fill('x').join(' '));
+}  */
