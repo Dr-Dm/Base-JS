@@ -1,183 +1,41 @@
-// var table = document.createElement("table");
-// for (let i = 0; i < 10; i++) {
-//     var tr = document.createElement("tr");
-//     table.append(tr);
-//     for (let j = 1; j <= 10; j++) {
-//         var td = document.createElement("td");
-//         td.innerHTML = "<h2>" + (i * j) + "</h2>";
-//         tr.append(td);
-//     }
-// }
-// document.querySelector('div').append(table);
+function chb() {
+    var abc = ['', 'A','B','C','D','E','F','G','H',''];
+    var num = ['','8','7','6','5','4','3','2','1',''];
+    var bf = ['1','&#9820','&#9822','&#9821','&#9819','&#9818','&#9821','&#9822','&#9820','1'];
+    var bp = ['2','&#9823','&#9823','&#9823','&#9823','&#9823','&#9823','&#9823','&#9823','2'];
+    var wf = ['8','&#9814','&#9816','&#9815','&#9813','&#9812','&#9815','&#9816','&#9814','8'];
+    var wp = ['7','&#9817','&#9817','&#9817','&#9817','&#9817','&#9817','&#9817','&#9817','7'];
 
-function draw(){
-    var table = document.createElement('table');
- //   var flag = true;
-    
-    var tr = document.createElement('tr');
-    var arr = [' ','a','b','c','d','e','f','g','h'];
-    
-
-    //генерим ячейки
-    for(var i = 0; i < 9; i++){
-        var tr = document.createElement('tr'); 
-
-        for(var k = 0; k < 9; k++){
-        
+    var table = document.createElement("table");
+    for (var i = 0; i < 10; i++) {
+        var tr = document.createElement('tr');
+        for (var j = 0; j < 10; j++ ) {
             var td = document.createElement('td');
-            td.style.width='50px';
-            td.style.height='50px';
-            td.style.background='white';
-            td.innerHTML=arr[k];
-            
+            if (i ==9 || j == 0) {
+                td.innerHTML = num[i] || abc[j];
+            }
+            else if (i == 0 || j== 9) {
+                td.innerHTML = num[i] || abc[j];
+                td.style.transform = 'rotate(180deg)';
+            }
+            else if (i%2 == j%2) {
+                td.style.background='whitesmoke';
+            } else {
+                td.style.background='burlywood';
+            }
+            if (i == 1) {
+                td.innerHTML = bf[j];
+            } else if (i == 2) {
+                td.innerHTML = bp[j];
+            } else if (i == 7) {
+                td.innerHTML = wp[j];
+            } else if (i == 8) {
+                td.innerHTML = wf[j];
+            }
             tr.appendChild(td);
-            
-        }
-        table.appendChild(tr);
-
-        
-        
-        //создаем ячейку для цифр
-        var tdd = document.createElement('td');
-        tdd.style.width='50px';
-        tdd.style.height='50px';
-        tdd.innerHTML=9-(i+1);
-        tr.appendChild(tdd);
-        
-        for(var j=0; j < 8; j++){
-            
-            if(j==0)
-                flag=!flag;
-            
-            var td = document.createElement('td');
-            
-            td.style.width='50px';
-            td.style.height='50px';
-            if(flag){
-                td.style.background='black';    
-            }else
-                td.style.background='white';    
-                
-            tr.appendChild(td);
-            flag=!flag;
         }
         table.appendChild(tr);
     }
-    
-    //генерим буквы
-    for(var k = 0; k < 9; k++){
-        
-        var td = document.createElement('td');
-        td.style.width='50px';
-        td.style.height='50px';
-        td.style.background='white';
-        td.innerHTML=arr[k];
-        
-        trr.appendChild(td);
-        
-    }
-    table.appendChild(trr);
-    
     document.body.appendChild(table);
 }
- 
-draw();
-
-
-
-
-
-
-
-
-
-
-
-function draw(){
-    var table = document.createElement('table');
-    var flag = true;
-    
-    var trr = document.createElement('tr');
-    var arr = [' ','a','b','c','d','e','f','g','h'];
-    
-  
-    //генерим ячейки
-    for(var i = 0; i < 8; i++){
-        var tr = document.createElement('tr'); 
-        
-        
-
-        //создаем ячейку для цифр
-        var tdd = document.createElement('td');
-        tdd.style.width='50px';
-        tdd.style.height='50px';
-        tdd.innerHTML=8-i;
-        tr.appendChild(tdd);
-        
-        for(var j=0; j < 8; j++){
-            
-            if(j==0)
-                flag=!flag;
-            
-            var td = document.createElement('td');
-            
-            td.style.width='50px';
-            td.style.height='50px';
-            if(flag){
-                td.style.background='black';    
-            }else
-                td.style.background='white';    
-                
-            tr.appendChild(td);
-            flag=!flag;
-        }
-        table.appendChild(tr);
-
-        var tdd = document.createElement('td');
-        tdd.style.width='50px';
-        tdd.style.height='50px';
-        tdd.style.transform='rotate(180deg)';
-        tdd.innerHTML=8-i;
-        tr.appendChild(tdd);
-    }
-    
-    //генерим буквы
-    for(var k = 0; k < 9; k++){
-        
-        var td = document.createElement('td');
-        td.style.width='50px';
-        td.style.height='50px';
-        td.style.background='white';
-        td.innerHTML=arr[k];
-        
-        trr.appendChild(td);
-        
-    }
-    table.appendChild(trr);
-    
-    document.body.appendChild(table);
-}
- 
-draw();
-
-
-
-
-
-var table = document.createElement("table");
-for (var i = 1; i < 9; i++) {
-    var tr = document.createElement('tr');
-    for (var j = 1; j < 9; j++) {
-        var td = document.createElement('td');
-        td.style.width='50px';
-        td.style.height='50px';
-        if (i%2 == j%2) {
-            td.style.background='white';
-        } else {
-            td.style.background='black';
-        }
-        tr.appendChild(td);
-    }
-    table.appendChild(tr);
-}
-document.body.appendChild(table);
+chb(); // шел другим путем, но передумал и частично взял идеи из готовых решений, рассмотренных на уроке.
