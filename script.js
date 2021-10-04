@@ -1,8 +1,13 @@
-var images = document.querySelectorAll("img");
-
-for(var i = 0; i < 3; i++){
-function f(e) {
-    var img = document.createElement("img");
-    img.src = "p" + (e.target.id[1] - 1) + ".jpg";
-
+var images = document.querySelectorAll('.small img');
+var block =  document.querySelector('.big');
+for(var item of images){
+    item.onclick = function() {
+        block.innerHTML = '';
+        var bigImg = document.createElement('img');
+        bigImg.src = this.src.replace('small', 'big');
+        bigImg.onerror = function (){
+            alert('Not Found'); 
+        }
+        document.querySelector('.big').append(bigImg);
+    }
 }
