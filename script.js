@@ -1,50 +1,48 @@
-var images = document.querySelectorAll('.small img');
-var block =  document.querySelector('.big');
-for(var item of images){
-    item.onclick = function() {
-        block.innerHTML = '';
-        var bigImg = document.createElement('img');
-        bigImg.src = this.src.replace('small', 'big');
-        bigImg.onerror = function (){
-            alert('Not Found'); 
-        }
-        document.querySelector('.big').append(bigImg);
-    }
-}
+//1
 
+// Замыкание можно применить на счетчике, больше, к моменту сдачи дз, ничего в голову не пришло
 
-var item1 = {
-    name: 'name1',
-    price: 10
-}
+//2
 
-var item2 = {
-    name: 'name2',
-    price: 12
-}
+// if (!("a" in window)) {
+//     var a = 1;
+// }
+// alert(a);
 
-var item3 = {
-    name: 'name3',
-    price: 14
-}
+// результат: undefined, код воспринимается интрепритатором в следующем виде: 
+// var a;
+// if (!("a" in window)) {
+//     a = 1;
+// }
+// alert(a);
 
-var items = [item1, item2, item3];
+// В данном случае код запускает глобальную область, ("а" in window) - true, а а=1 не выполняется. alert(a) выводит глобально заданное значение "а", которое не определено.
 
-var sum = 0;
+// var b = function a(x) {
+//     x && a(--x);
+// };
+// alert(a);
 
-function init() {
-    var catalog = document.querySelector('.catalog');
-    
-    for (var i = 0; i < items.length; i++) {
-        document.createElement('div');
-        // item.setAttribute('class', 'div_item');
-        // item.appendChild(document.createTextNode(items[i].name));
-        item.innerHTML(items[i].name);
-        item.style.border = '1px solid black';
-        item.appendChild(document.innerHTML(items[i].price));
-        itemBut = createElement('button');
-        itemBut.id = 'btn_' + i;
-        itemBut.onclick = add;
-        item.appendChild(item);
-    }
-}
+//  веротнее всего ничего не произойдет.
+
+// function a(x) {
+//     return x * 2;
+// }
+// var a;
+// alert(a);
+
+// если мия функции используется как имя перменной, то значение этой переменной заменяется на тело функции, получается var a становится самой функцией, что и отобразится при выводе.
+
+// function b(x, y, a) {
+//     arguments[2] = 10;
+//     alert(a);
+// }
+// b(1, 2, 3);
+// в функции идет присвоение а значения 10. и его вывод. 
+
+// function a() {
+//     alert(this);
+// }
+// a.call(null);
+
+// this указывает на window. вызов call у функции с null равносилен вызову call баз аргументов, соответственно идет вызов window.
